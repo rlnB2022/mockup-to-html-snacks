@@ -10,7 +10,7 @@ section#header {
 }
 section#header nav.navbar {
   min-height: 70px;
-  padding: 10px 0;
+  padding: 0 1rem;
   transition: all 0.3s;
   border-bottom: 1px solid transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -20,7 +20,23 @@ section#header nav.navbar {
 section#header nav.navbar.opened {
   background-color: #fff;
 }
-section#header nav.navbar a.navbar-brand img {
+section#header nav.navbar.opened .hamburger-menu span:nth-child(1) {
+  opacity: 0;
+}
+section#header nav.navbar.opened .hamburger-menu span:nth-child(2) {
+  transform: rotate(45deg);
+}
+section#header nav.navbar.opened .hamburger-menu span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+section#header nav.navbar.opened .hamburger-menu span:nth-child(4) {
+  opacity: 0;
+}
+section#header nav.navbar .navbar-brand {
+  padding: 10px 0;
+  min-height: 70px;
+}
+section#header nav.navbar .navbar-brand a img {
   height: 3rem;
   width: auto;
 }
@@ -35,6 +51,7 @@ section#header nav button {
   border: 0;
   background-color: transparent;
   position: relative;
+  box-shadow: none;
 }
 section#header nav button .hamburger-menu span {
   position: absolute;
@@ -43,9 +60,11 @@ section#header nav button .hamburger-menu span {
   height: 2px;
   width: 30px;
   background-color: #000;
+  transition: all 0.2s ease;
 }
 section#header nav button .hamburger-menu span:nth-child(2), section#header nav button .hamburger-menu span:nth-child(3) {
   top: 8px;
+  transition: all 0.15s ease;
 }
 section#header nav button .hamburger-menu span:nth-child(4) {
   top: 16px;
